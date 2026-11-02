@@ -1,0 +1,9 @@
+.tools/
+.arduino/
+.build/
+*.hex
+*.elf
+*.o
+*.zip
+.DS_Store
+Thumbs.db
