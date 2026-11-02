@@ -30,8 +30,10 @@ que Arduino genera al preprocesar el sketch.
 - Control_USB no se ha probado físicamente con el L298N y los motores.
 - La alimentación del montaje final y el puente 5V-EN requieren revisión.
 - Se comprobó el script Linux y se usó para compilar los cuatro sketches.
-- No se ejecutó carrito.cmd en un PC Windows durante esta preparación.
-  Se debe confirmar instalación y carga en el Windows del equipo.
+- GitHub Actions ejecutó correctamente carrito.cmd en Windows y carrito.sh
+  en Linux: instalación y compilación de los cuatro programas.
+  Resultado: https://github.com/agustinvidal20004-sudo/carrito-arduino/actions/runs/41456225525
+- La carga por USB todavía debe comprobarse en el PC Windows del equipo.
 - No hay soporte Bluetooth en esta versión.
 
 Una compilación correcta comprueba que el programa se puede generar para
