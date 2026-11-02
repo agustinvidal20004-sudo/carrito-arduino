@@ -1,0 +1,40 @@
+name: Compilar para Arduino Uno
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    name: Windows - instalador y cuatro programas
+    runs-on: windows-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: cmd
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar Arduino CLI y soporte Uno
+        run: call carrito.cmd instalar
+      - name: Compilar LED
+        run: call carrito.cmd compilar Prueba_Placa
+      - name: Compilar un sensor
+        run: call carrito.cmd compilar Prueba_Un_Sensor
+      - name: Compilar dos sensores
+        run: call carrito.cmd compilar Prueba_Sensores
+      - name: Compilar control USB
+        run: call carrito.cmd compilar Control_USB
+  linux:
+    name: Linux - instalador y cuatro programas
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar Arduino CLI y soporte Uno
+        run: bash carrito.sh instalar
+      - name: Compilar todos los programas
+        run: |
+          for programa in Prueba_Placa Prueba_Un_Sensor Prueba_Sensores Control_USB; do
+            bash carrito.sh compilar "$programa"
+          done
