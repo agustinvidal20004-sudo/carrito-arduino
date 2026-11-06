@@ -1,7 +1,10 @@
 # Carrito Arduino Uno
 
 Código del equipo para Arduino Uno + controlador de motores L298N.
-Control actual: órdenes por USB desde terminal. Bluetooth aún no implementado.
+Hay dos variantes: control por USB y control por Bluetooth para el diagrama de El Profe Ricardo.
+
+**Para Arduino Car, comenzar por [la prueba y guía Bluetooth](docs/BLUETOOTH.md).**
+Los protocolos y conexiones de motores de ambas variantes son distintos.
 
 ## Qué instalar en Windows
 
@@ -62,6 +65,8 @@ Solo un programa queda cargado a la vez: la nueva carga reemplaza al anterior.
 | `Prueba_Placa` | Parpadeo del LED integrado | Solo USB |
 | `Prueba_Un_Sensor` | Lectura 0/1 y LED L según la entrada | OUT en D2, GND común, VCC según especificación del sensor |
 | `Prueba_Sensores` | Lecturas de dos sensores | OUT izquierdo D2, derecho D3, alimentación apropiada y GND común |
+| `Prueba_Bluetooth` | Muestra bytes recibidos del módulo en el monitor USB | TXD del módulo a D2; revisar guía Bluetooth |
+| `Control_Bluetooth` | Control por la app con F/B/L/R/S | Revisar `docs/BLUETOOTH.md` |
 | `Control_USB` | Control de dos motores con L298N | Revisar `docs/CONTROL_Y_CONEXIONES.md` antes de alimentar |
 
 Para comprobar código sin tener placa conectada:

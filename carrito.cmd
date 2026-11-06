@@ -21,6 +21,8 @@ if /i "%ACCION%"=="puertos" (
 )
 if "%PROGRAMA%"=="" set "PROGRAMA=Control_USB"
 if /i "%PROGRAMA%"=="Control_USB" goto programa_valido
+if /i "%PROGRAMA%"=="Control_Bluetooth" goto programa_valido
+if /i "%PROGRAMA%"=="Prueba_Bluetooth" goto programa_valido
 if /i "%PROGRAMA%"=="Prueba_Placa" goto programa_valido
 if /i "%PROGRAMA%"=="Prueba_Un_Sensor" goto programa_valido
 if /i "%PROGRAMA%"=="Prueba_Sensores" goto programa_valido
@@ -72,5 +74,5 @@ echo Falta puerto. Ejemplo: .\carrito.cmd %ACCION% %PROGRAMA% COM3
 exit /b 2
 :ayuda
 echo Uso: .\carrito.cmd instalar^|puertos^|compilar^|cargar^|monitor [PROGRAMA] [PUERTO]
-echo Programas: Prueba_Placa, Prueba_Un_Sensor, Prueba_Sensores, Control_USB
+echo Programas: Prueba_Placa, Prueba_Un_Sensor, Prueba_Sensores, Control_USB, Prueba_Bluetooth, Control_Bluetooth
 exit /b 0

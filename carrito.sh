@@ -11,7 +11,7 @@ accion=${1:-ayuda}
 programa=${2:-Control_USB}
 puerto=${3:-}
 case "$programa" in
-  Control_USB|Prueba_Placa|Prueba_Un_Sensor|Prueba_Sensores) ;;
+  Control_USB|Control_Bluetooth|Prueba_Bluetooth|Prueba_Placa|Prueba_Un_Sensor|Prueba_Sensores) ;;
   *) echo "Programa desconocido: $programa" >&2; exit 2 ;;
 esac
 if [[ "$accion" == instalar ]]; then
@@ -34,7 +34,7 @@ if [[ "$accion" == instalar ]]; then
 fi
 if [[ "$accion" == ayuda ]]; then
   echo 'Uso: bash carrito.sh instalar|puertos|compilar|cargar|monitor [PROGRAMA] [PUERTO]'
-  echo 'Programas: Prueba_Placa, Prueba_Un_Sensor, Prueba_Sensores, Control_USB'
+  echo 'Programas: Prueba_Placa, Prueba_Un_Sensor, Prueba_Sensores, Control_USB, Prueba_Bluetooth, Control_Bluetooth'
   exit 0
 fi
 [[ -x "$cli" ]] || { echo 'Primero ejecuta: bash carrito.sh instalar' >&2; exit 2; }
